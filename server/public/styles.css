@@ -1,0 +1,24 @@
+body {
+    background-color: mintcream ;
+}
+
+/* .input-group-prepend{
+width: 200px;
+} */
+
+
+.input-group mb-4{
+    margin-left: 30px;
+}
+.input-group-text{
+    width: 200px;
+
+}
+
+.form-control-4{
+    background-color:lightgreen;
+}
+
+.form-control{
+    background-color: lightskyblue;
+}

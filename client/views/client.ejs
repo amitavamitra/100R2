@@ -1,0 +1,72 @@
+<h1>Client</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+
+<body>
+
+    <form action="/" method="post">
+                                  
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"  id="basic-addon3">Material Type</span>
+                </div>
+                <input type="text" name= "MATYP" class="form-control-4" id="basic-url">
+              </div>
+            
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Industry</span>
+                </div>
+                <input type="text" name= "MBRSH"  class="form-control-4" id="basic-url">
+              </div>
+            
+            <div class="input-group mb-6">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Description</span>
+                </div>
+                <input type="text" name="MATKX" class="form-control-4" id="basic-url">
+              </div>
+            <br>
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Base Unit</span>
+                </div>
+                <input type="text" name="MEINS" class="form-control-4" id="basic-url">
+              </div>
+             
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text  label-width" id="basic-addon3">Material Group</span>
+              </div>
+              <input type="text" name="MATKL" class="form-control-4" id="basic-url">
+            </div>
+       
+        <button type="submit">Emit</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+		
+    		var socket = io();
+
+    		socket.emit('joining msg', name);
+
+    		$('form').submit(function(e) {
+    			e.preventDefault();            // will prevent page reloading
+      			socket.emit('chat message', (name + ':  ' + $('#m').val()));
+                //   $('#messages').replaceWith($('<input id="text">').text('You:  ' + $('#m').val()));
+            $('#messages').replaceWith(newContent:$('<input id ="text">').text($('#m').val()));
+                        // $('#messages').append($('<input id="text">').text('You:  ' + $('#m').val()));
+      			$('#m').val('');
+      			return false;
+    		});
+    		socket.on('chat message', function(msg){
+      			$('#messages').append($('<input>').text(msg));
+    		});
+  		
+    </script>
+
+
+
+</body>
